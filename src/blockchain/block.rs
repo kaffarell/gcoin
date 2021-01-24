@@ -1,5 +1,6 @@
 use crate::payload::data::Data;
 
+#[derive(Hash)]
 pub struct Block {
     hash: String,
     prev_hash: String,
@@ -20,7 +21,7 @@ impl Block {
         }
     }
 
-    pub fn initialize(mut self, hash: String, prev_hash: String, data: Data, date: String, nonce: i64) {
+    pub fn initialize(&mut self, hash: String, prev_hash: String, data: Data, date: String, nonce: i64) {
         self.hash = hash;
         self.prev_hash = prev_hash;
         self.data = data;

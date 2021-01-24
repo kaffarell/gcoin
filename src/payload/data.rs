@@ -1,3 +1,4 @@
+#[derive(Hash)]
 pub struct Data {
     pub data_type: String,
 

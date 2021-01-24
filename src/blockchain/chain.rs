@@ -1,4 +1,5 @@
 use crate::blockchain::block;
+use crate::payload::data::Data;
 
 pub struct Chain {
     pub chain: Vec<block::Block>,
@@ -11,7 +12,16 @@ impl Chain {
         }
     }
 
-    pub fn add(mut self, block: block::Block) {
+    pub fn add(&mut self, block: block::Block) {
         self.chain.push(block);
+    }
+
+    pub fn validate(&self){
+        
+    }
+
+    pub fn mine(&self, data: Vec<Data>) {
+        // Create Block
+
     }
 }
