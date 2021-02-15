@@ -22,6 +22,6 @@ impl Chain {
 
     pub fn mine(&self, data: Vec<Data>) {
         // Create Block
-
+        
     }
 }

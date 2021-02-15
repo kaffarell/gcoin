@@ -10,3 +10,9 @@ impl std::fmt::Display for Data {
         write!(f, "(\ndata_type: {}\n)", self.data_type)
     }
 }
+
+impl std::fmt::Debug for Data {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "(\ndata_type: {}\n)", self.data_type)
+    }
+}
