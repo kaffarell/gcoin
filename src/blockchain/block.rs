@@ -3,12 +3,12 @@ use crate::utils::crypto;
 
 #[derive(Hash)]
 pub struct Block {
-    hash: String,
-    prev_hash: String,
-    data: Vec<Data>,
+    pub hash: String,
+    pub prev_hash: String,
+    pub data: Vec<Data>,
     // Fix date type
-    date: String,
-    nonce: i64,
+    pub date: String,
+    pub nonce: i64,
 }
 
 impl Block {
@@ -29,19 +29,25 @@ impl Block {
 
     pub fn mine(&mut self){
         let mut nonce: i64 = 0;
+        self.nonce = nonce;
         let mut block_string: String;
         block_string = self.generate_string();
         let mut hash = block_string.as_bytes();
-        println!("Crypto function 2");
         crypto::hash_md5(hash);
-        let difficulty: usize = 5;
-        let mut created_hash: String;
-        while &hash[..difficulty] != "00000".as_bytes() {
+
+        // Mining difficulty
+        let difficulty: usize = 6;
+
+        let mut created_hash: String = String::new();
+        while &hash[..difficulty] != "000000".as_bytes() {
             nonce = nonce + 1;
+            self.nonce = nonce;
             block_string = self.generate_string();
             created_hash = crypto::hash_md5(block_string);
             hash = created_hash.as_bytes();
         }
+        self.hash = created_hash;
+        self.nonce = nonce;
     }
 
     pub fn generate_string(&self) -> String {
@@ -49,6 +55,8 @@ impl Block {
         s.push_str(&self.hash);
         s.push_str(&self.prev_hash);
         s.push_str(&format!("{:?}", &self.data)[..]);
+        s.push_str(&self.date);
+        s.push_str(&self.nonce.to_string());
         return s;
     }
 }
