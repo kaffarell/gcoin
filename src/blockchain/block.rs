@@ -29,15 +29,18 @@ impl Block {
 
     pub fn mine(&mut self){
         let mut nonce: i64 = 0;
-        let mut blockString = self.generate_string();
-        let mut hash = blockString.as_bytes();
+        let mut block_string: String;
+        block_string = self.generate_string();
+        let mut hash = block_string.as_bytes();
         println!("Crypto function 2");
         crypto::hash_md5(hash);
         let difficulty: usize = 5;
+        let mut created_hash: String;
         while &hash[..difficulty] != "00000".as_bytes() {
             nonce = nonce + 1;
-            blockString = self.generate_string();
-            hash = crypto::hash_md5(blockString).as_bytes();
+            block_string = self.generate_string();
+            created_hash = crypto::hash_md5(block_string);
+            hash = created_hash.as_bytes();
         }
     }
 
