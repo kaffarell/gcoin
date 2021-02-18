@@ -4,7 +4,6 @@ use leveldb::iterator::Iterable;
 use leveldb::kv::KV;
 use leveldb::options::{Options, WriteOptions, ReadOptions};
 use crate::blockchain::block;
-use serde::{Deserialize, Serialize};
 use serde_json::Result;
 
 
@@ -27,14 +26,15 @@ pub fn create_database() -> Database<i32> {
     return database;
 }
 
-pub fn get(database: &Database<i32>) {
+pub fn get(database: &Database<i32>) -> block::Block{
     // Read from database
     let read_opts = ReadOptions::new();
     let res = database.get(read_opts, 1);
     match res {
         Ok(data) => {
-            assert!(data.is_some());
-            assert_eq!(data, Some(vec![1]));
+            let string = String::from_utf8(data.unwrap()).expect("Error converting database data to string");
+            println!("Data: {}", string);
+            return serde_json::from_str(&string).unwrap();
         }
         Err(e) => {panic!("Failed to read from database: {:?}", e)}
     };
@@ -42,13 +42,13 @@ pub fn get(database: &Database<i32>) {
     let read_opts = ReadOptions::new();
     let mut iter = database.iter(read_opts);
     let entry = iter.next();
-    println!("{:?}", entry);
+    println!("All data: {:?}", entry);
 }
 
-pub fn put(database: &Database<i32>, block: block::Block) {
+pub fn put(database: &Database<i32>, block: &block::Block) {
     // Write to database
     let write_ops = WriteOptions::new();
-    let string = serde_json::to_string(&block)?;
+    let string = serde_json::to_string(block).unwrap();
     match database.put(write_ops, 1, string.as_bytes()) {
         Ok(_) => {()},
         Err(e) => {panic!("Failed to write to database: {:?}", e)}

@@ -1,4 +1,8 @@
+use serde::{Serialize, Deserialize};
+
+
 #[derive(Hash)]
+#[derive(Serialize, Deserialize)]
 pub struct Data {
     pub data_type: String,
 

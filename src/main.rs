@@ -9,9 +9,6 @@ use payload::data::Data;
 use db::db::*;
 
 fn main() {
-    let db = create_database();
-    put(&db);
-    get(&db);
 
     let mut chain: Chain = Chain::new();
     let mut block1: Block = Block::new();
@@ -21,6 +18,11 @@ fn main() {
     data.push(Data{ data_type: "gabriel -> damian".to_string()});
 
     block1.initialize(data, "345.345345-34".to_string());
+
+
+    let db = create_database();
+    put(&db, &block1);
+    get(&db);
 
     println!("Begin Block Mining");
     block1.mine();
