@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 md5 = "0.7.0"
+leveldb = "0.8.6"

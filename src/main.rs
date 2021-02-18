@@ -1,12 +1,15 @@
 mod blockchain;
 mod payload;
 mod utils;
+mod db;
 
 use blockchain::block::*;
 use blockchain::chain::*;
 use payload::data::Data;
+use db::db::*;
 
 fn main() {
+    create_database();
     let mut chain: Chain = Chain::new();
     let mut block1: Block = Block::new();
 
