@@ -1,7 +1,10 @@
 use crate::payload::data::Data;
 use crate::utils::crypto;
+use serde::{Deserialize, Serialize};
+
 
 #[derive(Hash)]
+#[derive(Serialize, Deserialize)]
 pub struct Block {
     pub hash: String,
     pub prev_hash: String,

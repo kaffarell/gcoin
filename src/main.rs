@@ -9,7 +9,10 @@ use payload::data::Data;
 use db::db::*;
 
 fn main() {
-    create_database();
+    let db = create_database();
+    put(&db);
+    get(&db);
+
     let mut chain: Chain = Chain::new();
     let mut block1: Block = Block::new();
 
