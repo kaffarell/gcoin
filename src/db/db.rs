@@ -26,31 +26,36 @@ pub fn create_database() -> Database<i32> {
     return database;
 }
 
-pub fn get(database: &Database<i32>) -> block::Block{
+pub fn get(database: &Database<i32>, index: i32) -> block::Block{
+    // TODO: Fix index here, should be i64
     // Read from database
     let read_opts = ReadOptions::new();
-    let res = database.get(read_opts, 1);
+    let res = database.get(read_opts, index);
     match res {
         Ok(data) => {
+            // data is another Option, so unwrapt it and convert the u8 vector to a string
             let string = String::from_utf8(data.unwrap()).expect("Error converting database data to string");
-            println!("Data: {}", string);
+            // Convert json string to Block struct
             return serde_json::from_str(&string).unwrap();
         }
         Err(e) => {panic!("Failed to read from database: {:?}", e)}
     };
 
-    let read_opts = ReadOptions::new();
-    let mut iter = database.iter(read_opts);
-    let entry = iter.next();
-    println!("All data: {:?}", entry);
 }
 
 pub fn put(database: &Database<i32>, block: &block::Block) {
     // Write to database
     let write_ops = WriteOptions::new();
     let string = serde_json::to_string(block).unwrap();
-    match database.put(write_ops, 1, string.as_bytes()) {
+    println!("Inserting at: {}", get_total_height(&database));
+    match database.put(write_ops, get_total_height(&database) as i32, string.as_bytes()) {
         Ok(_) => {()},
         Err(e) => {panic!("Failed to write to database: {:?}", e)}
     };
+}
+
+pub fn get_total_height(database: &Database<i32>) -> i64 {
+    let read_opts = ReadOptions::new();
+    let iter = database.iter(read_opts);
+    return iter.count() as i64; 
 }

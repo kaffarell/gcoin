@@ -8,6 +8,7 @@ use serde::{Serialize, Deserialize};
 pub struct Block {
     pub hash: String,
     pub prev_hash: String,
+    pub height: i64,
     pub data: Vec<Data>,
     // Fix date type
     pub date: String,
@@ -19,6 +20,7 @@ impl Block {
         Block {
             hash: String::new(),
             prev_hash: String::new(),
+            height: 0,
             data: Vec::new(),
             date: String::new(),
             nonce: 0,
@@ -57,6 +59,7 @@ impl Block {
         let mut s = String::new();
         s.push_str(&self.hash);
         s.push_str(&self.prev_hash);
+        s.push_str(&self.height.to_string());
         s.push_str(&format!("{:?}", &self.data)[..]);
         s.push_str(&self.date);
         s.push_str(&self.nonce.to_string());
@@ -66,6 +69,6 @@ impl Block {
 
 impl std::fmt::Display for Block {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "(\nhash: {}, \nprev_hash: {}, \ndata: {:?}, \ndate: {}, \nnonce: {}\n)", self.hash, self.prev_hash, self.data, self.date, self.nonce)
+        write!(f, "(\nhash: {}, \nprev_hash: {}, \nheight: {}, \ndata: {:?}, \ndate: {}, \nnonce: {}\n)", self.hash, self.prev_hash, self.height, self.data, self.date, self.nonce)
     }
 }

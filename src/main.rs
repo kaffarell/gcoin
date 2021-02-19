@@ -12,21 +12,22 @@ fn main() {
 
     let mut chain: Chain = Chain::new();
     let mut block1: Block = Block::new();
+    let mut block2: Block = Block::new();
 
     let mut data: Vec<Data> = Vec::new();
     data.push(Data{ data_type: "damian -> lukas ".to_string()});
     data.push(Data{ data_type: "gabriel -> damian".to_string()});
 
+    let mut data1: Vec<Data> = Vec::new();
+    data1.push(Data{ data_type: "lukas -> lukas ".to_string()});
+    data1.push(Data{ data_type: "gabriel -> gabriel".to_string()});
+
     block1.initialize(data, "345.345345-34".to_string());
-
-
-    let db = create_database();
-    put(&db, &block1);
-    get(&db);
-
-    println!("Begin Block Mining");
+    block2.initialize(data1, "345.345345-33".to_string());
     block1.mine();
-    println!("Done Block Mining");
+    block2.mine();
+
     chain.add(block1);
-    println!("Block: {}", chain.chain[0]);
+    chain.add(block2);
+    chain.print();
 }
