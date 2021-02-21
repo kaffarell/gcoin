@@ -1,2 +1,2 @@
 # gcoin
-Blockchain with tokens in Rust
+Cryptocurrency with proof of work created entirely in rust.
