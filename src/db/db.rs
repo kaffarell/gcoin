@@ -4,12 +4,11 @@ use leveldb::iterator::Iterable;
 use leveldb::kv::KV;
 use leveldb::options::{Options, WriteOptions, ReadOptions};
 use crate::blockchain::block;
-use serde_json::Result;
 
 
 pub fn create_database() -> Database<i32> {
     let mut dir = env::current_dir().unwrap();
-    dir.push("demo");
+    dir.push("chain");
 
     let path_buf = dir.clone();
     fs::create_dir_all(dir).unwrap();
@@ -47,7 +46,6 @@ pub fn put(database: &Database<i32>, block: &block::Block) {
     // Write to database
     let write_ops = WriteOptions::new();
     let string = serde_json::to_string(block).unwrap();
-    println!("Inserting at: {}", get_total_height(&database));
     match database.put(write_ops, get_total_height(&database) as i32, string.as_bytes()) {
         Ok(_) => {()},
         Err(e) => {panic!("Failed to write to database: {:?}", e)}

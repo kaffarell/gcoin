@@ -41,10 +41,10 @@ impl Block {
         crypto::hash_md5(hash);
 
         // Mining difficulty
-        let difficulty: usize = 6;
+        let difficulty: usize = 5;
 
         let mut created_hash: String = String::new();
-        while &hash[..difficulty] != "000000".as_bytes() {
+        while &hash[..difficulty] != "00000".as_bytes() {
             nonce = nonce + 1;
             self.nonce = nonce;
             block_string = self.generate_string();
