@@ -1,1 +1,0 @@
-C:\Users\gabri\Desktop\gcoin\client\target\debug\client.exe: C:\Users\gabri\Desktop\gcoin\client\src\console.rs C:\Users\gabri\Desktop\gcoin\client\src\data.rs C:\Users\gabri\Desktop\gcoin\client\src\main.rs
