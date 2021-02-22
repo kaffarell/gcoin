@@ -3,20 +3,24 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Hash)]
 #[derive(Serialize, Deserialize)]
-pub struct Data {
-    pub data_type: String,
+pub struct Transaction {
+    pub sender: String,
+    pub receiver: String,
+    pub amount: String,
 
 }
 
 
-impl std::fmt::Display for Data {
+impl std::fmt::Display for Transaction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "(\ndata_type: {}\n)", self.data_type)
+        write!(f, "(\nsender: {}\nreceiver: {}\namount: {}\n)", 
+        self.sender, self.receiver, self.amount)
     }
 }
 
-impl std::fmt::Debug for Data {
+impl std::fmt::Debug for Transaction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "(\ndata_type: {}\n)", self.data_type)
+        write!(f, "(\nsender: {}\nreceiver: {}\namount: {}\n)", 
+        self.sender, self.receiver, self.amount)
     }
 }

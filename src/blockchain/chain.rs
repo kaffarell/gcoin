@@ -26,7 +26,7 @@ impl Chain {
 
     pub fn print(self) {
         println!("length: {}", db::get_total_height(&self.db));
-        for i in 0..db::get_total_height(&self.db)-1 {
+        for i in 0..db::get_total_height(&self.db) {
             println!("Block: {}", db::get(&self.db, i as i32));
         }
     }

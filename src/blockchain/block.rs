@@ -1,4 +1,4 @@
-use crate::payload::data::Data;
+use crate::payload::data::Transaction;
 use crate::utils::crypto;
 use serde::{Serialize, Deserialize};
 
@@ -9,7 +9,7 @@ pub struct Block {
     pub hash: String,
     pub prev_hash: String,
     pub height: i64,
-    pub data: Vec<Data>,
+    pub data: Vec<Transaction>,
     // Fix date type
     pub date: String,
     pub nonce: i64,
@@ -27,7 +27,7 @@ impl Block {
         }
     }
 
-    pub fn initialize(&mut self, data: Vec<Data>, date: String) {
+    pub fn initialize(&mut self, data: Vec<Transaction>, date: String) {
         self.data = data;
         self.date = date;
     }
@@ -53,6 +53,10 @@ impl Block {
         }
         self.hash = created_hash;
         self.nonce = nonce;
+        // Mining reward
+        // TODO: Find out which address is the miner
+        let t = Transaction{sender: "".to_string(), receiver: "".to_string(), amount: "1".to_string()};
+        self.data.push(t);
     }
 
     pub fn generate_string(&self) -> String {
