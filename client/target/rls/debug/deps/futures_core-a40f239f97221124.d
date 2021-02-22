@@ -1,0 +1,11 @@
+c:\Users\gabri\Desktop\gcoin\client\target\rls\debug\deps\futures_core-a40f239f97221124.rmeta: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\future.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\stream.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\poll.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\__internal\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\__internal\atomic_waker.rs
+
+c:\Users\gabri\Desktop\gcoin\client\target\rls\debug\deps\futures_core-a40f239f97221124.d: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\future.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\stream.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\poll.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\__internal\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\__internal\atomic_waker.rs
+
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\lib.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\future.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\stream.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\mod.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\poll.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\__internal\mod.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\futures-core-0.3.12\src\task\__internal\atomic_waker.rs:

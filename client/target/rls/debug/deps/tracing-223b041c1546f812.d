@@ -1,0 +1,13 @@
+c:\Users\gabri\Desktop\gcoin\client\target\rls\debug\deps\tracing-223b041c1546f812.rmeta: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\macros.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\dispatcher.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\field.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\instrument.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\level_filters.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\span.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\stdlib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\subscriber.rs
+
+c:\Users\gabri\Desktop\gcoin\client\target\rls\debug\deps\tracing-223b041c1546f812.d: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\macros.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\dispatcher.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\field.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\instrument.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\level_filters.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\span.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\stdlib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\subscriber.rs
+
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\lib.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\macros.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\dispatcher.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\field.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\instrument.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\level_filters.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\span.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\stdlib.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\tracing-0.1.24\src\subscriber.rs:

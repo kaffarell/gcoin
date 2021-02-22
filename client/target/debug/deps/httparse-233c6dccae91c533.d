@@ -1,0 +1,12 @@
+C:\Users\gabri\Desktop\gcoin\client\target\debug\deps\httparse-233c6dccae91c533.rmeta: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\iter.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\macros.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\sse42.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\avx2.rs
+
+C:\Users\gabri\Desktop\gcoin\client\target\debug\deps\libhttparse-233c6dccae91c533.rlib: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\iter.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\macros.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\sse42.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\avx2.rs
+
+C:\Users\gabri\Desktop\gcoin\client\target\debug\deps\httparse-233c6dccae91c533.d: C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\lib.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\iter.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\macros.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\mod.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\sse42.rs C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\avx2.rs
+
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\lib.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\iter.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\macros.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\mod.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\sse42.rs:
+C:\Users\gabri\.cargo\registry\src\github.com-1ecc6299db9ec823\httparse-1.3.5\src\simd\avx2.rs:
