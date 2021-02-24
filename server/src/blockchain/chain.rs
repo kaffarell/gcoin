@@ -25,10 +25,12 @@ impl Chain {
         db::put(&self.db, &block);
     }
 
-    pub fn print(self) {
+    pub fn print(self) -> String{
+        let mut string: String = String::new();
         for i in 0..db::get_total_height(&self.db) {
-            println!("Block: {}", serde_json::to_string(&db::get(&self.db, i as i32)).unwrap());
+            string.push_str(&serde_json::to_string(&db::get(&self.db, i as i32)).unwrap());
         }
+        return string;
     }
 
     pub fn validate(&self){

@@ -27,9 +27,9 @@ fn add_transaction(transaction: String) {
 }
 
 #[get("/chain")]
-fn get_chain() {
+fn get_chain() -> String {
     let mut chain: Chain = Chain::new();
-    chain.print();
+    return chain.print();
 }
 
 fn main() {
