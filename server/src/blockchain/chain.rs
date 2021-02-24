@@ -2,6 +2,7 @@ use crate::blockchain::block;
 use leveldb::database::Database;
 use crate::db::db;
 
+
 pub struct Chain {
     pub db: Database<i32>,
 }
@@ -25,9 +26,8 @@ impl Chain {
     }
 
     pub fn print(self) {
-        println!("length: {}", db::get_total_height(&self.db));
         for i in 0..db::get_total_height(&self.db) {
-            println!("Block: {}", db::get(&self.db, i as i32));
+            println!("Block: {}", serde_json::to_string(&db::get(&self.db, i as i32)).unwrap());
         }
     }
 
