@@ -11,6 +11,7 @@ fn main() {
     let choice_number: i32 = line.trim_end().parse().expect("Error parsing to i32");
     if choice_number == 1 {
         // Generate public private key
+        key::generate_keys("test".to_string());
     }else if choice_number == 2 {
         // Read public private key from file
     }else{
