@@ -17,24 +17,13 @@ pub fn generate_keys(){
 
     println!("{}", private_key_string);
     println!("{}", public_key_string);
-    /*
-    let public_keys = rsa.public_key_to_der().unwrap();
-    let private_keys = rsa.private_key_to_der().unwrap();
 
-    let private_pem = Pem {
-        tag: String::from("RSA PRIVATE KEY"),
-        contents: private_keys,
-    };
-    let private = encode(&private_pem);
-    println!("------------------------------------");
-    println!("{}", private);
-    */
     // Write to file
     fs::write("./priv.pem", private_key_string).expect("Unable to write public key file");
     fs::write("./pub.pem", public_key_string).expect("Unable to write private key file");
 }
 
-pub fn read_key(transaction: data::Transaction) {
+pub fn sign(transaction: data::Transaction) -> Vec<u8> {
     // To String
     let pub_data =  fs::read_to_string("./pub.pem").expect("Unable to read public key file");
     let priv_data =  fs::read_to_string("./priv.pem").expect("Unable to read private key file");
@@ -49,6 +38,12 @@ pub fn read_key(transaction: data::Transaction) {
     let mut signer = Signer::new(MessageDigest::sha256(), &keypair).unwrap();
     signer.update(data.as_bytes()).unwrap();
     let signature = signer.sign_to_vec().unwrap();
-    // Signature
     println!("{}", String::from_utf8_lossy(&signature));
+    return signature;
+}
+
+pub fn get_public_key() -> Strign {
+    // To String
+    let pub_data =  fs::read_to_string("./pub.pem").expect("Unable to read public key file");
+    return pub_data;
 }

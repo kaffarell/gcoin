@@ -6,7 +6,13 @@ pub struct Transaction {
     pub sender: String,
     pub receiver: String,
     pub amount: String,
+    pub signature: Vec<u8>,
+}
 
+impl Transaction {
+    pub fn sign(&mut self, signature: Vec<u8>) {
+        self.signature = signature;
+    }
 }
 
 
