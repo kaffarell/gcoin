@@ -1,11 +1,14 @@
 use std::io::stdin;
 mod data;
-mod console;
 mod key;
+mod requests;
 
 fn main() {
+    println!("-----------------------------------------------");
+    println!("{}", key::get_public_key()[27..key::get_public_key().len()-26].to_string().replace("\n", ""));
+    println!("-----------------------------------------------");
     // Check if new public/private key or use existing one
-    println!("Create new private/public key? \n[1] yes \n[2] no");
+    println!("[1] Create new pub/priv key pair \n[2] Make Transaction \n[3] Show Info");
     let mut line = String::new();
     let _ = stdin().read_line(&mut line).unwrap();
     let choice_number: i32 = line.trim_end().parse().expect("Error parsing to i32");
@@ -15,12 +18,45 @@ fn main() {
     }else if choice_number == 2 {
         // Output public key
         println!("Your public key: \n{}", key::get_public_key());
-        // Get Transaction
 
+        // Get Transaction
+        println!("Enter recipient: ");
+        let mut recipient_input = String::new();
+        let _ = stdin().read_line(&mut recipient_input).unwrap();
+        println!("Enter amount: ");
+        let mut amount_input = String::new();
+        let _ = stdin().read_line(&mut amount_input).unwrap();
+
+        // Check if user has enough gcoins
 
         // Sign
-        let tran: data::Transaction = data::Transaction{sender: "204985".to_string(), receiver: "34573495".to_string(), amount: "3.4".to_string()};
-        key::read_key(tran)
+        // Slice public key out of wrapping BEGIN PUBLIC KEY
+        let public_key_string = key::get_public_key()[27..key::get_public_key().len()-26].to_string();
+        let tran: data::Transaction = data::Transaction{sender: public_key_string, receiver: recipient_input, amount: amount_input, signature: vec![0]};
+        key::sign(&tran);
+
+        // Ask for confermation
+        println!("-----------------------------------------------");
+        println!("{}", tran);
+        println!("-----------------------------------------------");
+        println!("Is this transaction correct? \n[1] yes \n[2] no");
+        let mut transaction_confermation_input = String::new();
+        let _ = stdin().read_line(&mut transaction_confermation_input).unwrap();
+        let confermation: i32 = transaction_confermation_input.trim_end().parse().expect("Error parsing to i32");
+        if confermation == 2 {
+            return; 
+        }
+
+        // Send to server
+        requests::send_transaction(&tran);
+
+    }else if choice_number == 3 {
+        println!("Balance: ");
+        requests::get_balance(key::get_public_key());
+        println!("Public key:");
+        println!("{}", key::get_public_key());
+        println!("Private key:");
+        println!("{}", key::get_private_key());
     }else{
         println!("Input error");
     }
