@@ -9,6 +9,7 @@ use blockchain::block::*;
 use blockchain::chain::*;
 use payload::data::Transaction;
 use chrono::prelude::*;
+use rocket::http::Status;
 
 #[macro_use] extern crate rocket;
 

@@ -9,5 +9,7 @@ pub fn get_balance(pub_key: String) -> Result<i32, reqwest::Error> {
 
 pub fn send_transaction(transaction: &Transaction) {
     let string = serde_json::to_string(transaction).unwrap();
-    println!("{}", string);
+    let client = reqwest::blocking::Client::new();
+    let res = client.post("http://localhost:8000/add").body(string).send().unwrap();
+    println!("{:?}", res);
 }

@@ -4,9 +4,6 @@ mod key;
 mod requests;
 
 fn main() {
-    println!("-----------------------------------------------");
-    println!("{}", key::get_public_key()[27..key::get_public_key().len()-26].to_string().replace("\n", ""));
-    println!("-----------------------------------------------");
     // Check if new public/private key or use existing one
     println!("[1] Create new pub/priv key pair \n[2] Make Transaction \n[3] Show Info");
     let mut line = String::new();
@@ -51,6 +48,9 @@ fn main() {
         requests::send_transaction(&tran);
 
     }else if choice_number == 3 {
+        println!("-----------------------------------------------");
+        println!("{}", key::get_public_key()[27..key::get_public_key().len()-26].to_string().replace("\n", ""));
+        println!("-----------------------------------------------");
         println!("Balance: ");
         requests::get_balance(key::get_public_key());
         println!("Public key:");
