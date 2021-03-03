@@ -49,5 +49,5 @@ async fn main() {
     let t = Transaction{sender: "065sjdfsdf45".to_string(), receiver: "34h3453h345".to_string(), amount: "4.56".to_string(), signature: vec![0, 0, 0]};
     println!("{}", serde_json::to_string(&t).unwrap());
 
-    rocket::ignite().mount("/", routes![add_transaction, get_chain]).launch().await;
+    rocket::ignite().mount("/", routes![add_transaction, get_chain]).launch().await.ok();
 }
