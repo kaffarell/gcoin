@@ -29,8 +29,8 @@ fn main() {
         // Sign
         // Slice public key out of wrapping BEGIN PUBLIC KEY
         let public_key_string = key::get_public_key()[27..key::get_public_key().len()-26].to_string();
-        let tran: data::Transaction = data::Transaction{sender: public_key_string, receiver: recipient_input, amount: amount_input, signature: vec![0]};
-        key::sign(&tran);
+        let mut tran: data::Transaction = data::Transaction{sender: public_key_string, receiver: recipient_input, amount: amount_input, signature: vec![0]};
+        key::sign(&mut tran);
 
         // Ask for confermation
         println!("-----------------------------------------------");

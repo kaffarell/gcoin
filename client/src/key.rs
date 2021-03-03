@@ -23,7 +23,7 @@ pub fn generate_keys(){
     fs::write("./pub.pem", public_key_string).expect("Unable to write private key file");
 }
 
-pub fn sign(transaction: &data::Transaction) -> Vec<u8> {
+pub fn sign(transaction: &mut data::Transaction) {
     // To String
     let priv_data =  fs::read_to_string("./priv.pem").expect("Unable to read private key file");
 
@@ -37,7 +37,7 @@ pub fn sign(transaction: &data::Transaction) -> Vec<u8> {
     signer.update(data.as_bytes()).unwrap();
     let signature = signer.sign_to_vec().unwrap();
     //println!("{}", String::from_utf8_lossy(&signature));
-    return signature;
+    transaction.signature = signature;
 }
 
 pub fn get_public_key() -> String {

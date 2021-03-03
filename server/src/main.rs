@@ -23,6 +23,7 @@ async fn add_transaction(transaction: String) -> String{
     let time: DateTime<Local> = Local::now();
     block.initialize(data, time.to_string());
 
+    // Execute the mining and adding to blockchain async
     tokio::spawn(async move {
         add_block_to_chain(block, chain).await;
     });
