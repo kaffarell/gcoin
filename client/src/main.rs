@@ -1,6 +1,6 @@
 use std::io::stdin;
 mod data;
-mod key;
+mod crypto;
 mod requests;
 
 fn main() {
@@ -11,10 +11,10 @@ fn main() {
     let choice_number: i32 = line.trim_end().parse().expect("Error parsing to i32");
     if choice_number == 1 {
         // Generate keys
-        key::generate_keys();
+        crypto::generate_keys();
     }else if choice_number == 2 {
         // Output public key
-        println!("Your public key: \n{}", key::get_public_key());
+        println!("Your public key: \n{}", crypto::get_public_key());
 
         // Get Transaction
         println!("Enter recipient: ");
@@ -28,9 +28,9 @@ fn main() {
 
         // Sign
         // Slice public key out of wrapping BEGIN PUBLIC KEY
-        let public_key_string = key::get_public_key()[27..key::get_public_key().len()-26].to_string();
+        let public_key_string = crypto::get_public_key()[27..crypto::get_public_key().len()-26].to_string();
         let mut tran: data::Transaction = data::Transaction{sender: public_key_string, receiver: recipient_input, amount: amount_input, signature: vec![0]};
-        key::sign(&mut tran);
+        crypto::sign(&mut tran);
 
         // Ask for confermation
         println!("-----------------------------------------------");
@@ -49,14 +49,14 @@ fn main() {
 
     }else if choice_number == 3 {
         println!("-----------------------------------------------");
-        println!("{}", key::get_public_key()[27..key::get_public_key().len()-26].to_string().replace("\n", ""));
+        println!("{}", crypto::get_public_key()[27..crypto::get_public_key().len()-26].to_string().replace("\n", ""));
         println!("-----------------------------------------------");
         println!("Balance: ");
-        requests::get_balance(key::get_public_key());
+        requests::get_balance(crypto::get_public_key()).ok();
         println!("Public key:");
-        println!("{}", key::get_public_key());
+        println!("{}", crypto::get_public_key());
         println!("Private key:");
-        println!("{}", key::get_private_key());
+        println!("{}", crypto::get_private_key());
     }else{
         println!("Input error");
     }

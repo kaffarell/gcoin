@@ -9,12 +9,6 @@ pub struct Transaction {
     pub signature: Vec<u8>,
 }
 
-impl Transaction {
-    pub fn sign(&mut self, signature: Vec<u8>) {
-        self.signature = signature;
-    }
-}
-
 
 impl std::fmt::Display for Transaction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

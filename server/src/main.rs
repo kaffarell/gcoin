@@ -18,6 +18,7 @@ async fn add_transaction(transaction: String) -> String{
     let mut block: Block = Block::new();
     let mut data: Vec<Transaction> = Vec::new();
     let t: Transaction = serde_json::from_str(&transaction).unwrap();
+    // Check if transaction is signed correctly
     data.push(t);
     // Get time
     let time: DateTime<Local> = Local::now();

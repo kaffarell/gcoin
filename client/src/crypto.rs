@@ -1,9 +1,7 @@
-use openssl::rsa::{Rsa, Padding};
+use openssl::rsa::{Rsa};
 use openssl::pkey::PKey;
-use openssl::sign::{Signer, Verifier};
+use openssl::sign::{Signer};
 use openssl::hash::MessageDigest;
-use openssl::symm::Cipher;
-use pem::{Pem, encode, parse};
 use std::fs;
 use crate::data;
 

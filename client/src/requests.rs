@@ -2,6 +2,7 @@ use crate::data::Transaction;
 
 pub fn get_balance(pub_key: String) -> Result<i32, reqwest::Error> {
     println!("tes");
+    println!("pub_key: {}", pub_key);
     let body = reqwest::blocking::get("http://localhost:8000/chain").unwrap().text()?;
     println!("Body: {}", body);
     return Ok(0);
