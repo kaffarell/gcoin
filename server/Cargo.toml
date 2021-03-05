@@ -15,3 +15,4 @@ chrono = "0.4.19"
 tokio = {version = "1.2.0", features = ["full"] }
 rocket = { git = "https://github.com/SergioBenitez/Rocket" }
 rocket_contrib = { git = "https://github.com/SergioBenitez/Rocket" }
+openssl = "0.10.32"
