@@ -26,6 +26,7 @@ fn main() {
 
         // Check if user has enough gcoins
 
+
         // Sign
         // Slice public key out of wrapping BEGIN PUBLIC KEY
         let public_key_string = crypto::get_public_key()[27..crypto::get_public_key().len()-26].to_string();

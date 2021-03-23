@@ -10,6 +10,19 @@ pub struct Transaction {
 }
 
 
+
+#[derive(Serialize, Deserialize)]
+pub struct Block {
+    pub hash: String,
+    pub prev_hash: String,
+    pub height: i64,
+    pub data: Vec<Transaction>,
+    // Fix date type
+    pub date: String,
+    pub nonce: i64,
+}
+
+
 impl std::fmt::Display for Transaction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "(\nsender: {}\nreceiver: {}\namount: {}\n)", 
