@@ -53,7 +53,7 @@ fn main() {
         println!("{}", crypto::get_public_key()[27..crypto::get_public_key().len()-26].to_string().replace("\n", ""));
         println!("-----------------------------------------------");
         println!("Balance: ");
-        requests::get_balance(crypto::get_public_key()).ok();
+        requests::get_balance(crypto::get_public_key()[27..crypto::get_public_key().len()-26].to_string().replace("\n", "")).ok();
         println!("Public key:");
         println!("{}", crypto::get_public_key());
         println!("Private key:");

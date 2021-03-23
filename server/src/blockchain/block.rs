@@ -55,7 +55,7 @@ impl Block {
         self.nonce = nonce;
         // Mining reward
         // TODO: Find out which address is the miner
-        let t = Transaction{sender: "".to_string(), receiver: "".to_string(), amount: "1".to_string(), signature: vec![0, 0, 0]};
+        let t = Transaction{sender: "".to_string(), receiver: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDFwGJPY8CH4cHoo7KN8EAcBAvy0Y6/HGDjdxPpGohwO0G1Zt0jY+ps29Kd8aX6QwPgnMkWOudeXufi01Y6UYWiWh774d+6H1446+xl7gAG7rWdchygRM0fPV12eiNJDOtcC7R0S06Ez0fZEJ4o2RwFXLoKjI/7vJPGpJQ8Sbx6fwIDAQAB".to_string(), amount: "1".to_string(), signature: vec![0, 0, 0]};
         self.data.push(t);
     }
 
